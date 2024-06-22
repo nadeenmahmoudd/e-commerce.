@@ -1,0 +1,61 @@
+<nav
+    class="navbar navbar-expand-sm navbar-light bg-light fixed-top "
+>
+    <div class="container">
+        <a class="navbar-brand" >
+            <img src="./assets/images/freshcart-logo.svg">
+        </a>
+        <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="text-success fw-bold ">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cart" routerLinkActive="text-success fw-bold ">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/favouriteList" routerLinkActive="text-success fw-bold ">Wish List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/products" routerLinkActive="text-success fw-bold ">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/categories" routerLinkActive="text-success fw-bold ">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/brands" routerLinkActive="text-success fw-bold ">Brands</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 me-3 gap-3  ">
+                <li class="nav-item " >
+                    <i class="fa fa-shopping-cart">
+                        <div class="badge bg-main ">{{numberOfItems}}</div>
+                    </i>
+                 </li>
+                <!-- <li class="nav-item d-flex gap-3" >
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-tiktok"></i>
+                </li> -->
+                <li class="nav-item " >
+                   <span (click)="signOut()" class="span"> Log Out</span>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+</nav>
+

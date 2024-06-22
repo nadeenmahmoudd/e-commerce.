@@ -1,0 +1,57 @@
+
+
+
+
+<!-- <div class="container mt-5 pt-4 ">
+    <div class="bg-light p-4 " >
+                <div class="d-flex justify-content-between mt-3 p-4">
+            <h3> Number of Items :<span class="text-main"> {{orderItem.numOfCartItems}}</span></h3>
+            <h3> Total price : <span class="text-main">{{orderItem.data.totalCartPrice}} </span></h3>
+        </div>
+        <div class="row align-items-center " *ngFor="let product of orderItem">
+        <div class="col-md-2">
+            <div>
+                <img [src]="product.data.products.imageCover" class="w-100 ">
+            </div>
+        </div>
+        <div class="col-md-8">
+           <div>
+            <h4>{{product.data.products.title}}</h4>
+            <span class="text-main">{{product.data.products.price}}</span>
+           </div>
+        </div>
+
+        </div>
+    </div>
+    
+</div> -->
+<div class="bg-light p-4 " >
+    <div class="d-flex justify-content-between mt-3 p-4">
+        <!-- <h3> Number of Items :<span class="text-main"> {{cart.numOfCartItems}}</span></h3>
+        <h3> Total price : <span class="text-main">{{cart.data.totalCartPrice}} </span></h3> -->
+    </div>
+    <div *ngFor="let x of items">
+        <div *ngFor="let item of x.cartItems">
+       <div class="row align-items-center">
+        <div class="col-md-2">
+            <div>
+                <img [src]="item.product.imageCover" class="w-100 ">
+                <!-- <img [src]="item.imageCover" class="w-100 "> -->
+            </div>
+            <!-- <p>{{item._id}}</p> -->
+            <!-- <img [src]="item.product.images" class="w-100 "> -->
+        </div>
+        <div class="col-md-8">
+           <div>
+            <h4>{{item.product.category.name}}</h4>
+            <span class="text-main">{{x.totalOrderPrice}}</span>
+        
+           </div>
+        </div>
+       </div>
+        </div>
+        <hr/>
+
+  
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container mt-5 p-5">
+
+<form (ngSubmit)="handelShippingForm()" [formGroup]="shippingForm" >
+<div>
+    <label for="details">Details</label>
+    <input type="text" id="details" class="form-control "formControlName="details">
+    <div *ngIf="shippingForm.get('details')?.errors && (shippingForm.get('details')?.touched || shippingForm.get('details')?.value.length>0)" class="alert alert-danger ">
+        <p *ngIf="shippingForm.get('details')?.getError('required')">details is required</p>
+        <p *ngIf="shippingForm.get('details')?.getError('minlength')">min length 3</p>
+        <p *ngIf="shippingForm.get('details')?.getError('maxlength')">maxlength 50</p>
+    </div>
+</div>
+<div>
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" class="form-control "formControlName="phone">
+    <div *ngIf="shippingForm.get('phone')?.errors && (shippingForm.get('phone')?.touched || shippingForm.get('phone')?.value.length>0)" class="alert alert-danger ">
+        <p *ngIf="shippingForm.get('phone')?.getError('required')">phone is required</p>
+        <p *ngIf="shippingForm.get('phone')?.getError('pattern')">egy numbers only</p>
+    </div>
+</div>
+<div>
+    <label for="city">City</label>
+    <input type="text" id="city" class="form-control "formControlName="city">
+    <div *ngIf="shippingForm.get('city')?.errors && (shippingForm.get('city')?.touched || shippingForm.get('city')?.value.length>0)" class="alert alert-danger ">
+        <p *ngIf="shippingForm.get('city')?.getError('required')">City is required</p>
+       
+    </div>
+</div>
+<button class="bg-main btn text-white mt-2 d-block ms-auto ">Submit</button>
+</form>
+</div>

@@ -1,0 +1,55 @@
+<!-- <div class="container m-4 p-4">
+<div>
+    <img [src=]>
+</div>
+</div> -->
+<div class="bg-light p-4 " >
+    <div class=" mt-3 p-4">
+        <h3> My Wish List :<span class="text-main"> </span></h3>
+            <div class="row align-items-center " *ngFor="let item of favouriteItems">
+                <div class="col-md-2">
+                    <div>
+                        <img [src]="item.imageCover" class="w-100 ">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                   <div>
+                    <h6>{{item.title}}</h6>
+                    <span class="text-main">{{item.price}}</span>
+                     <div class="remove"> 
+                        <span class="text-danger h" (click)="removeItem(item._id)">
+                            <i class="fa fa-trash "></i>
+                            remove
+                        </span>
+                    </div>
+                    <button class="btn d-block ms-auto bg-main text-white " (click)="addToCart(item._id)" >Add To Cart</button>
+                   </div>
+                </div>
+                </div>
+    </div>
+</div>
+    
+        <!-- <div class="col-md-2">
+            <div>
+                <img [src]="product.product.imageCover" class="w-100 ">
+            </div>
+        </div>
+        <div class="col-md-8">
+           <div>
+            <h4>{{product.product.title}}</h4>
+            <span class="text-main">{{product.price}}</span>
+            <div class="remove">
+                <span class="text-danger" (click)="removeItem(product.product.id)">
+                    <i class="fa fa-trash "></i>
+                    remove
+                </span>
+            </div>
+           </div>
+        </div>
+        <div class="col-md-2 d-flex justify-content-between ">
+            <button class="btn btn-update" (click)="updateCart(product.product.id,product.count+1 )">+</button>
+            <span>{{product.count}}</span>
+            <button class="btn btn-update" (click)="updateCart(product.product.id,product.count-1 )">-</button>
+        </div>
+        </div>
+    </div> -->

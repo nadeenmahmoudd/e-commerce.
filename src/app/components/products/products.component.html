@@ -1,0 +1,31 @@
+<div class="container mt-5 p-4">
+  <input type="text" class="form-control my-3 w-50 mx-auto " [(ngModel)]="searchTerm" placeholder="search...">
+<div class="row">
+  <div class="col-md-3"  *ngFor="let product of products | filterProducts :searchTerm" [title]="product.title" >
+    <div class="product p-2">
+      <div [routerLink]="['/details/' ,product._id]">
+        <img [src]="product.imageCover" class="w-100 ">
+          <div>
+          <h5 class="text-main h6">{{product.category.name}}</h5>
+          <h4 class="h6">{{product.title | trim}}
+            <span *ngIf="product.title.split(' ').length >2">...</span>
+          </h4>
+          <div class="d-flex justify-content-between ">
+              <span>{{product.price |currency}}</span>
+              <span>{{product.ratingsAverage}}  
+                  <i class="fa fa-star rating-color "  ></i>
+              </span>
+          </div>
+    </div>
+  </div>
+  <!-- <div>
+    <span class="d-flex justify-content-end m-2 h "  (click)="removeItem(product._id) "  ><i *ngIf="favouriteItems.includes(product._id) " class="fa fa-heart red-heart"></i></span>
+
+    <span class="d-flex justify-content-end m-2 h "  (click)="addToFav(product._id) " ><i *ngIf="!favouriteItems.includes(product._id)" class="fa fa-heart"></i></span>
+  </div> -->
+  <button class="btn bg-main d-block w-100 text-white " (click)="addToCart(product._id)">+Add to cart</button>
+</div>
+</div>
+<div *ngIf="isLoading" class="position-absolute bg-black opacity-50 w-100 h-100 top-0 start-0 d-flex justify-content-center align-items-center ">
+  <i class="fa fa-spin fa-spinner text-main fa-2xl"></i>
+</div>
